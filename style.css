@@ -266,8 +266,9 @@ body {
   background-color: #fff;
   border-radius: 20px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: flex;         /* Habilita Flexbox no card */
+  flex-direction: column; /* Organiza imagem e info em coluna */
+  height: 100%;          /* Garante que todos os cards na linha tenham o mesmo tamanho */
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -282,8 +283,13 @@ body {
   object-fit: cover;
 }
 
+
 .info {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
 }
 
 .info h3 {
@@ -293,17 +299,28 @@ body {
 
 .info p {
   line-height: 1.5;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.highlight-text {
+  font-style: italic;
+  color: #e44617;
+  font-weight: 600;
+  border-left: 4px solid #ffaf02;
+  padding-left: 10px;
 }
 
 .map-btn {
-  display: inline-block;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 8px 15px;
   background-color: #e44617;
   color: white;
-  border-radius: 5px;
+  border-radius: 70px;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .map-btn:hover {
@@ -329,19 +346,10 @@ footer {
 
 .buttons {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
 }
 
 .info-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  background-color: #e44617;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.3s;
+  display: none;
 }
 
 .info-btn:hover {
